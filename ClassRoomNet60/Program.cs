@@ -21,7 +21,7 @@ public class Program
         klasseRum.Klasseliste.Add(student2);
         klasseRum.Klasseliste.Add(student3);
 
-        // Udskriv for at verificere dataene og årstiderne
+        // Udskriv oplysninger om studerende
         Console.WriteLine($"Klasse: {klasseRum.KlasseNavn}");
         Console.WriteLine($"Semester Start: {klasseRum.SemesterStart.ToShortDateString()}");
         Console.WriteLine("Studerende:");
@@ -29,5 +29,8 @@ public class Program
         {
             Console.WriteLine($"{student.Navn} - Født: {student.Fødselsdag}/{student.Fødselsmåned} - Årstid: {student.Årstid()}");
         }
+
+        // Kald metoden for at tælle antal fødselsdage per årstid
+        klasseRum.TælFødselsdagePerÅrstid();
     }
 }

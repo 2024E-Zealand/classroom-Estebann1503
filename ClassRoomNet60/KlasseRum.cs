@@ -19,5 +19,23 @@ namespace ClassRoomNet60
             Klasseliste = new List<Studerende>();
 
         }
+
+        // Metode til at tælle antal fødselsdage per årstid
+        public void TælFødselsdagePerÅrstid()
+        {
+            var fødselsdagePerÅrstid = Klasseliste
+                .GroupBy(studerende => studerende.Årstid())
+                .Select(gruppe => new
+                {
+                    Årstid = gruppe.Key,
+                    Antal = gruppe.Count()
+                });
+
+            Console.WriteLine("Antal fødselsdage per årstid:");
+            foreach (var item in fødselsdagePerÅrstid)
+            {
+                Console.WriteLine($"{item.Årstid}: {item.Antal}");
+            }
+        }
     }
 }
