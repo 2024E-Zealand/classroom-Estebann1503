@@ -21,6 +21,13 @@ public class Program
         klasseRum.Klasseliste.Add(student2);
         klasseRum.Klasseliste.Add(student3);
 
-
+        // Udskriv 
+        Console.WriteLine($"Klasse: {klasseRum.KlasseNavn}");
+        Console.WriteLine($"Semester Start: {klasseRum.SemesterStart.ToShortDateString()}");
+        Console.WriteLine("Studerende:");
+        foreach (var student in klasseRum.Klasseliste)
+        {
+            Console.WriteLine($"{student.Navn} - Født: {student.Fødselsdag}/{student.Fødselsmåned}");
+        }
     }
 }
