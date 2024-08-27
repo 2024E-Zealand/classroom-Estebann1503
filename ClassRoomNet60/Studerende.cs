@@ -33,11 +33,16 @@ namespace ClassRoomNet60
         }
 
         // Constructor
-        public Studerende(string _navn, int _fødselsmåned, int _fødselsdag)
+        public Studerende(string navn, int fødselsmåned, int fødselsdag)
         {
-            Navn = _navn;
-            Fødselsmåned = _fødselsmåned;
-            Fødselsdag = _fødselsdag;
+            if (fødselsmåned < 1 || fødselsmåned > 12)
+            {
+                throw new ArgumentOutOfRangeException(nameof(fødselsmåned), "Fødselsmåned skal være mellem 1 og 12.");
+            }
+
+            Navn = navn;
+            Fødselsmåned = fødselsmåned;
+            Fødselsdag = fødselsdag;
         }
 
         // Metode til at bestemme årstiden
